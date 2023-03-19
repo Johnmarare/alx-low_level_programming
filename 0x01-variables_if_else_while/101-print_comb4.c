@@ -3,7 +3,7 @@
  * main- entry point
  *
  * prints out possible combinations of 3 numbers
- * Returns: Always returns to 0.
+ * Return: Always returns to 0.
  */
 
 int main(void)
@@ -30,5 +30,6 @@ int main(void)
 
 		}
 	}
+	putchar('\n');
 	return (0);
 }
