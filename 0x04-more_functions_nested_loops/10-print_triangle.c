@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * print_triangle - Entry point
+ * @size: input
+ * Return: void.
+ */
 void print_triangle(int size)
 {
 	int x, y, z;
