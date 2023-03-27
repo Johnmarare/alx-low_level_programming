@@ -2,12 +2,12 @@
 #include <string.h>
 #include <stdio.h>
 /**
- * print_rev - reverses string
+ * rev_string - reverses string
  * @s: string
  * Return: void
  */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
 	int length = strlen(s);
 	int middle = length / 2;
