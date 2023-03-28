@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 /**
  * _atoi - convert string to integer
  * @s: string
@@ -8,22 +7,29 @@
 
 int _atoi(char *s)
 {
-	int res = 0;
-	int sign = 1;
-	int i = 0;
+	int c = 0;
+	unsigned int ni = 0;
+	int min = 1;
+	int isi = 0;
 
-	if (s[0] == '-')
+	while (s[c])
 	{
-		sign = -1;
-		i++;
-	}
-	for (; s[i] != '\0'; ++i)
+	if (s[c] == 45)
 	{
-		if (res > (INT_MAX - (s[i] - '0')) / 10)
-		{
-			return (sign == 1 ? INT_MAX : INT_MIN);
-		}
-		res = res * 10 + s[i] - '0';
+	min *= -1;
 	}
-	return (sign * res);
+	while (s[c] >= 48 && s[c] <= 57)
+	{
+	isi = 1;
+	ni = (ni * 10) + (s[c] - '0');
+	c++;
+	}
+	if (isi == 1)
+	{
+	break;
+	}
+	c++;
+	}
+	ni *= min;
+	return (ni);
 }
