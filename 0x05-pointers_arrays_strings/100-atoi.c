@@ -19,7 +19,11 @@ int _atoi(char *s)
 	}
 	for (; s[i] != '\0'; ++i)
 	{
-		res = res*10 + s[i] - '0';
+		if (res > (INT_MAX - (s[i] - '0')) / 10)
+		{
+			return (sign == 1 ? INT_MAX : INT_MIN);
+		}
+		res = res * 10 + s[i] - '0';
 	}
-	return (sign*res);
+	return (sign * res);
 }
