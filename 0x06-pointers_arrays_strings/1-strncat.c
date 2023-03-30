@@ -1,22 +1,31 @@
 #include "main.h"
-#include <string.h>
 /**
  * _strncat - concatenates strings
  * @dest: destination.
  * @src: source.
  * @n: number of elements in string.
+ * Return: dest
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int len1, i;
+	int i;
+	int j;
 
-	len1 = strlen(dest);
+	i = 0;
 
-	for (i = 0; i <= n; i++)
+	while (dest[i] != '\0')
 	{
-		dest[len1 + i] = src[i];
 		i++;
 	}
+	j = 0;
+
+	while (j < n && src[j] != '\0')
+	{
+		dest[i] = src[j];
+		j++;
+		i++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }
