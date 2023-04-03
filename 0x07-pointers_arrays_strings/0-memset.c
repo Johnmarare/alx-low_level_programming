@@ -1,13 +1,12 @@
 #include "main.h"
 /**
- * _memset - fills the first @n bytes of the memory
- * area pointed to by @s with constant byte @b.
- *
+ * _memset - fills memory with constant byte
  * @s: points to memory area
  * @b: constant byte
- * @n: bytes
- * Return: pointer s.
+ * @n: first bytes of memory area
+ * Return: @s
  */
+
 char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
