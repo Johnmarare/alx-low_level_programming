@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int mult;
+
 	if (argc < 3)
 	{
 		printf("Error\n");
