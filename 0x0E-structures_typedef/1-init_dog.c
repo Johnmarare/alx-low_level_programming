@@ -8,6 +8,8 @@
  * @name: dogs name
  * @age: dog's age
  * @owner: dog's owner
+ *
+ * Description: (*ptr).name is the same as ptr->name.
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
