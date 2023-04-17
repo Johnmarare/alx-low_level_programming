@@ -6,8 +6,9 @@
  * @d: points to struct dog.
  * Return: when @d is NULL, nothing.
  *	   of type void, returns nothing
+ *
+ *
  */
-
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
@@ -24,6 +25,3 @@ void print_dog(struct dog *d)
 	}
 	printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
 }
-
-
-
