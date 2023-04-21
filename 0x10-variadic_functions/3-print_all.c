@@ -45,12 +45,12 @@ void print_string(va_list ap)
 	char *str;
 
 	str = va_arg(ap, char *);
-	if (!str)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", str);
+	/*if (!str)*/
+	/*{*/
+	/*	printf("(nil)");*/
+	/*	return;*/
+	/*}*/
+	printf("%s", str ? str : "(nil)");
 }
 
 /**
