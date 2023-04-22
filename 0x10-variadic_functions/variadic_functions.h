@@ -21,6 +21,6 @@ typedef struct print_ops
 {
 	char *op;
 	void (*f)(va_list);
-}print_t;
+} print_t;
 
 #endif
