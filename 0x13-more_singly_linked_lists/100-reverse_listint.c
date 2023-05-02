@@ -7,12 +7,6 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *curr;
-
-	curr = *head;
-	if (!curr->next)
-	{
-		head++;
-	}
+	head++;
 	return (0);
 }
