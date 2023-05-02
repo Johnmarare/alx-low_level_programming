@@ -4,27 +4,20 @@
  * @head: pointer to *head
  * Return: on success 0.
  */
-
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *prev, *current;
-
-	if (head == NULL || *head == NULL)
-	{
-		return (NULL);
-	}
-
+	listint_t *prev, *current, *next;
 
 	prev = NULL;
-
-	while ((*head)->next != NULL)
+	current = *head;
+	next = NULL;
+	while (current != NULL)
 	{
-		current = (*head)->next;
-		(*head)->next = prev;
-		prev = *head;
-		*head = current;
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
 	}
-	(*head)->next = prev;
-
+	*head = prev;
 	return (*head);
 }
