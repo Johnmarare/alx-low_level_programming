@@ -21,6 +21,10 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	while (flip)
 	{
+		if (n == m || (n == 0 && m == 0))
+		{
+			return (0);
+		}
 		/*clear the least significant bit set*/
 		flip = flip & (flip - 1);
 		count++;
