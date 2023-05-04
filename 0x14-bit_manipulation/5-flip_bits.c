@@ -11,27 +11,18 @@
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int count;
-	unsigned int flip;
+	unsigned int i;
 
 	if (n == m || (n == 0 && m == 0))
 	{
 		return (0);
 	}
-	/*take Xor of `n` and `m` and store in flip*/
-	flip = n ^ m;
-	/*use Brian Kernighan's algorithm to count set bits*/
-	/*`count` stores the total bits set in `flip`*/
-	count = 0;
-
-	while (flip != 0)
+	for (count = i = 0; i < 64; i++, count++)
 	{
-		/* count the number of set bits in flip*/
-		count += (flip & 1);
-		/*shifts flip right by 1 bit*/
-		flip >>= 1;
+		if (((n >> i) & 1) == ((m >> i) & 1))
+		{
+			count--;
+		}
 	}
 	return (count);
 }
-
-
-
