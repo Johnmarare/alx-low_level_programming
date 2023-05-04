@@ -24,6 +24,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		if (n == m || (n == 0 && m == 0))
 		{
 			return (0);
+			break;
 		}
 		/*clear the least significant bit set*/
 		flip = flip & (flip - 1);
