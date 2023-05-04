@@ -23,11 +23,12 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	/*`count` stores the total bits set in `flip`*/
 	count = 0;
 
-	while (flip)
+	while (flip != 0)
 	{
-		/*clear the least significant bit set*/
-		flip = flip & (flip - 1);
-		count++;
+		/* count the number of set bits in flip*/
+		count += (flip & 1);
+		/*shifts flip right by 1 bit*/
+		flip >>= 1;
 	}
 	return (count);
 }
