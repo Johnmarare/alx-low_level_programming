@@ -13,6 +13,10 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned int count;
 	unsigned int flip;
 
+	if (n == m || (n == 0 && m == 0))
+	{
+		return (0);
+	}
 	/*take Xor of `n` and `m` and store in flip*/
 	flip = n ^ m;
 	/*use Brian Kernighan's algorithm to count set bits*/
@@ -21,11 +25,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	while (flip)
 	{
-		if (n == m || (n == 0 && m == 0))
-		{
-			return (0);
-			break;
-		}
 		/*clear the least significant bit set*/
 		flip = flip & (flip - 1);
 		count++;
