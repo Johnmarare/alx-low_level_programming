@@ -44,14 +44,14 @@ int write_err(int fd1, int fd2, char *filename)
 }
 
 /**
- *  * read_err - error handler for a read error
- *   *
- *    * @fd1: first descriptor to close
- *     * @fd2: second descriptor to close
- *      * @filename: filename prompting the error
- *       *
- *        * Return: 98
- *         */
+ * read_err - error handler for a read error
+ *
+ * @fd1: first descriptor to close
+ * @fd2: second descriptor to close
+ * @filename: filename prompting the error
+ *
+ * Return: 98
+ */
 int read_err(int fd1, int fd2, char *filename)
 {
 	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
@@ -64,8 +64,8 @@ int read_err(int fd1, int fd2, char *filename)
  * main - copy one file to another, new file with perms 664
  * usage - cp file_from file_to
  *
- * @ac: number of arg
- * @av: list of args
+ * @argc: number of arg
+ * @argv: list of args
  *
  * Return: 97 if incorrect num of args
  *	   98 if file_from does not exist or unreadable
