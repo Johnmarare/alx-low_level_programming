@@ -1,46 +1,36 @@
 #include "search_algos.h"
 #include <math.h>
-
-/**
- * linear_search - func searches for element in array using linear search
- * @array: array to be searched
- * @size: size of the array
- * @value: element to search
- *
- * Return: position of element, else -1
- */
-int linear_search(int *array, size_t size, int value);
 /**
  * jump_search - func searches for element in array using linear search
  * @array: array to be searched
  * @size: size of the array
  * @value: element to search
- *
- * Return: position of element, else -1
+ * Return: jj
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t i = 0;
-	size_t block = sqrt(size); /* initialize block size=sqrt(n) */
+	size_t step = sqrt(size);
+	size_t prev = 0;
+	size_t i;
 
-	if (array == NULL || size == 0)
+	if (array == NULL)
 		return (-1);
 
-	printf("Value checked array[%lu] = [%i]\n", i, array[i]);
-
-
-	while (array[i] < value && i < size)
+	printf("Value checked array[%lu] = [%d]\n", prev, array[prev]);
+	while (prev < size && array[prev] < value)
 	{
-		i += block;
+		prev += step;
+		if (prev < size)
+			printf("Value checked array[%lu] = [%d]\n", prev, array[prev]);
+	}
+	printf("Value found between indexes [%lu] and [%lu]\n", prev - step, prev);
 
-		if (i < size)
-		{
-			printf("Value checked array[%lu] = [%i]\n", i, array[i]);
-		}
-
+	for (i = prev - step; i <= prev && i < size; i++)
+	{
+		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
+		if (array[i] == value)
+			return (i);
 	}
 
-	printf("Value found between indexes [%lu] and [%lu]\n", i - block, i);
-
-	return (linear_search(array, size, value));
+	return (-1);
 }
