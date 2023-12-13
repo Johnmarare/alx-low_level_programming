@@ -2,7 +2,7 @@
 #include <math.h>
 
 /**
- * jump_search - function that searches for element in array using jump search
+ * linear_search - func searches for element in array using linear search
  * @array: array to be searched
  * @size: size of the array
  * @value: element to search
@@ -10,6 +10,14 @@
  * Return: position of element, else -1
  */
 int linear_search(int *array, size_t size, int value);
+/**
+ * jump_search - func searches for element in array using linear search
+ * @array: array to be searched
+ * @size: size of the array
+ * @value: element to search
+ *
+ * Return: position of element, else -1
+ */
 int jump_search(int *array, size_t size, int value)
 {
 	size_t i = 0;
